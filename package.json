@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Scuobahia/employee-tracker#readme",
   "dependencies": {
-    "inquirer": "^8.1.2"
+    "express": "^4.17.1",
+    "inquirer": "^8.1.2",
+    "mysql2": "^2.2.5"
   }
 }
