@@ -5,12 +5,29 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
-
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-
+const startApp = () => {
+  inquirer.prompt( {
+    name: 'action',
+    type: 'list',
+    message: 'What would you like to do today?'
+    choices: [
+      'View All Employees',
+      'View All Departments',
+      'View All Roles',
+      'Update an Employee Role',
+      'Add new Employee',
+      'Remove An Employee',
+      'Exit'
+    ],
+  })
+  .then((res) => {
+    switch (res.start) {
+      case 'View All Employees':
+        viewEmployees
+    }
+  }
+  )
+}
 
 
 
