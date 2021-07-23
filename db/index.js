@@ -8,6 +8,6 @@ class DB {
     findAll() {
         return this.connection
         .promise()
-        .query('SELECT * FROM employees.first_name, employees.last_name, role.title, role.salary, department.department_name')
+        .query('SELECT * FROM employees.first_name, employees.last_name, role.title, role.salary, department.name')
     }
 }
