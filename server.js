@@ -1,21 +1,18 @@
 const inquirer = require('inquirer');
 const db = require('./db');
 
-const PORT = process.env.PORT || 3001;
-const app = express();
-
 
 const startApp = () => {
   inquirer.prompt( {
     name: 'action',
     type: 'list',
-    message: 'What would you like to do today?'
+    message: 'What would you like to do today?',
     choices: [
       'View All Employees',
       'View All Departments',
       'View All Roles',
       'Update an Employee Role',
-      'Add new Employee',
+      'Add New Employee',
       'Remove An Employee',
       'Exit'
     ],
@@ -23,22 +20,31 @@ const startApp = () => {
   .then((res) => {
     switch (res.start) {
       case 'View All Employees':
-        viewEmployees
+          viewEmployees();
+          break;
+      case 'View All Departments':
+          viewDepartment();
+          break;    
+      case 'View All Roles':
+          viewRoles();
+          break;
+      case 'Update an Employee Role':
+          updateEmployee();
+          break;   
+      case 'Add New Employee':
+          addEmployee();
+          break;
+      case 'Remove An Employee':
+          removeEmployee();
+          break;
+      case 'Exit':
+        console.log('Have a nice day!')  
+        Connection.end();
+          break;          
     }
-  }
-  )
-}
+  })
+};
+
+startApp();
 
 
-
-
-
-// Default response for any other request (Not Found). Should be placed LAST!
-app.use((req, res) => {
-    res.status(404).end();
-  });
-  
-  // Express server function
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
