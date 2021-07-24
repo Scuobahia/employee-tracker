@@ -17,7 +17,7 @@ VALUES
     ("Junior Developers", 250000, 3),
     ("User Experience Developers", 45000, 3);
 
-INSERT INTO employees 
+INSERT INTO employees
     (first_name, last_name, role_id, manager_id)
 VALUES
     ("Bob", "Belcher", 6, 3),
