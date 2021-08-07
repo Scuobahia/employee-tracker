@@ -50,7 +50,7 @@ const start = () => {
           break;
           case "Exit":
             console.log("Thanks for using Employee Tracker!")
-            connection.end();
+            db.end();
           break;
     }
   });
